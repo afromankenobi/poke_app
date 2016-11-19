@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Pokemon.destroy_all
+Catched.destroy_all
 
 Pokemon.create(
   [
@@ -30,3 +33,16 @@ Pokemon.create(
     }
   ]
 )
+
+User.create([
+  {name: 'Jorge', email: 'jv.vargass@gmail.com', password: '12345678'},
+  {name: 'usuario2', email: 'usuario2@usuario.com', password: '12345678'}
+])
+
+10.times do
+  Catched.create(
+    user: User.select(:id).order("RANDOM()").first,
+    pokemon: Pokemon.select(:id).order("RANDOM()").first,
+    level: rand(1..10)
+  )
+end
