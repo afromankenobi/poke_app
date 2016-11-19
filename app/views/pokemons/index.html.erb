@@ -26,4 +26,6 @@
 
 <br>
 
-<%= link_to 'New Pokemon', new_pokemon_path %>
+<% if can? :create, Pokemon %>
+  <%= link_to 'New Pokemon', new_pokemon_path %>
+<% end %>

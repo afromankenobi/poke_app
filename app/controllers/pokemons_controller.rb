@@ -1,4 +1,6 @@
 class PokemonsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
 
   # GET /pokemons

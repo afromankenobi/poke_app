@@ -35,8 +35,8 @@ Pokemon.create(
 )
 
 User.create([
-  {name: 'Jorge', email: 'jv.vargass@gmail.com', password: '12345678'},
-  {name: 'usuario2', email: 'usuario2@usuario.com', password: '12345678'}
+  {name: 'Jorge', email: 'jv.vargass@gmail.com', password: '12345678', role: 'admin'},
+  {name: 'usuario2', email: 'usuario2@usuario.com', password: '12345678', role: 'trainer'}
 ])
 
 10.times do
