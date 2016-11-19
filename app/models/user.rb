@@ -7,4 +7,12 @@ class User < ApplicationRecord
 
   has_many :catcheds, dependent: :destroy
   has_many :pokemons, through: :catcheds
+
+  before_create :set_default_role
+
+  private
+
+  def set_default_role
+    self.role = 'trainer' if self.role.nil?
+  end
 end
