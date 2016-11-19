@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# cancancan
-gem 'cancancan'
+# carrierwave
+gem 'carrierwave'
 # PG
 gem 'pg'
 # Use Puma as the app server
@@ -50,3 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
+# cancancan
+gem 'cancancan'
