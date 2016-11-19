@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Description</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @pokemons.each do |pokemon| %>
       <tr>
+        <td><%= image_tag pokemon.photo %></td>
         <td><%= pokemon.name %></td>
         <td><%= pokemon.description %></td>
         <td><%= link_to 'Show', pokemon %></td>
