@@ -1,5 +1,6 @@
 class CatchedsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @catcheds = current_user.catcheds
   end
@@ -22,7 +23,9 @@ class CatchedsController < ApplicationController
   end
 
   def create
-    pokemons = Pokemon.find(catched_params[:pokemon_ids].delete_if{ |t| t.empty? })
+    pokemons = Pokemon.find(
+      user_catched_params[:pokemon_ids].delete_if(&:empty?)
+    )
     current_user.pokemons << pokemons
 
     if current_user.save
@@ -36,7 +39,7 @@ class CatchedsController < ApplicationController
 
   protected
 
-  def catched_params
-    params.require(:catched).permit(pokemon_ids: [])
+  def user_catched_params
+    params.require(:user).permit(pokemon_ids: [])
   end
 end

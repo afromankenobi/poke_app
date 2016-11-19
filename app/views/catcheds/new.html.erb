@@ -1,7 +1,7 @@
 <%= form_for(Catched.new) do |f| %>
   <div class="field">
     <%= f.label :pokemon_ids, "Pokemon" %><br>
-    <%= collection_check_boxes(:catched, :pokemon_ids, Pokemon.all, :id, :name) %>
+    <%= collection_check_boxes(:user, :pokemon_ids, Pokemon.all, :id, :name) %>
   </div>
 
   <div class="actions">
